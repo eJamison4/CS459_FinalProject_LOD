@@ -4,7 +4,7 @@
 #include <GL/glut.h>
 #include <iostream>
 #include <string>
-// #include <fstream>
+#include <fstream>
 
 struct point {
 	float x, y, z;
@@ -28,20 +28,45 @@ struct triFace {
 };
 
 // CONSTANTS
-
+const char meshFilePath[] = "";
+const float ANGFACT = { 2.0f };
+const int WINDOWPOS[2] = { 50, 50 };
+const int WINDOWSIZE[2] = { 1500, 800 };
+const float CLEAR[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+const float CLEAR_DEPTH = 1.0f;
 
 // GLOBALS
+bool mouseDown = false;
+int mousex;
+int mousey;
+
 static int win;
 static float viewDist;
+float maxVertex = 0.0f;
+float minVertex = 0.0f;
+int numVertices = 0;
+int numFaces = 0;
+
+point* vertices;
+triFace* faces;
+
+float xrot = 0.0f;
+float yrot = 0.0f;
+float xdiff = 0.0f;
+float ydiff = 0.0f;
 
 
 // HELPERS/HANDLERS
-void loadMeshFile(const char filePath[]);
-void normalizeVertices();
-
+void loadMeshFile_triangular(const char filePath[]);
+void normVerticesToRange(const float min, const float max);
+void keyboard(unsigned char key, int x, int y);
+void mouse(int button, int state, int x, int y);
+void mouseMotion(int x, int y);
 
 // OPENGL FUNCS
 void OpenGLInit();
 void display();
-
+void resize(int w, int h);
+void drawMesh();
+void drawLighting();
 
