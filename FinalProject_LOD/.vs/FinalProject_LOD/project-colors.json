@@ -1,5 +1,11 @@
 {
   "Version": 1,
-  "ProjectMap": {},
-  "NextColorIndex": 0
+  "ProjectMap": {
+    "b73937b9-a0ee-4244-a3a6-8dd8525edaa6": {
+      "ProjectGuid": "b73937b9-a0ee-4244-a3a6-8dd8525edaa6",
+      "DisplayName": "FinalProject_LOD",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
 }
