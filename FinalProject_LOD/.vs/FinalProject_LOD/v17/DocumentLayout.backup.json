@@ -10,16 +10,16 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B73937B9-A0EE-4244-A3A6-8DD8525EDAA6}|FinalProject_LOD.vcxproj|C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\meshoptimizer\\src\\simplifier.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B73937B9-A0EE-4244-A3A6-8DD8525EDAA6}|FinalProject_LOD.vcxproj|solutionrelative:meshoptimizer\\src\\simplifier.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B73937B9-A0EE-4244-A3A6-8DD8525EDAA6}|FinalProject_LOD.vcxproj|C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\Source.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B73937B9-A0EE-4244-A3A6-8DD8525EDAA6}|FinalProject_LOD.vcxproj|solutionrelative:Source.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B73937B9-A0EE-4244-A3A6-8DD8525EDAA6}|FinalProject_LOD.vcxproj|C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\meshoptimizer\\src\\meshoptimizer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B73937B9-A0EE-4244-A3A6-8DD8525EDAA6}|FinalProject_LOD.vcxproj|solutionrelative:meshoptimizer\\src\\meshoptimizer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B73937B9-A0EE-4244-A3A6-8DD8525EDAA6}|FinalProject_LOD.vcxproj|C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\meshoptimizer\\src\\simplifier.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B73937B9-A0EE-4244-A3A6-8DD8525EDAA6}|FinalProject_LOD.vcxproj|solutionrelative:meshoptimizer\\src\\simplifier.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B73937B9-A0EE-4244-A3A6-8DD8525EDAA6}|FinalProject_LOD.vcxproj|C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\meshoptimizer\\src\\indexgenerator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -47,7 +47,7 @@
               "RelativeDocumentMoniker": "Source.cpp",
               "ToolTip": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\Source.cpp",
               "RelativeToolTip": "Source.cpp",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAAAJMAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAEcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-22T15:09:10.167Z",
               "EditorCaption": ""
@@ -56,47 +56,8 @@
         },
         {
           "DockedWidth": 239,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "vector",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "ViewState": "AgIAABcHAAAAAAAAAAASwF8HAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-05T03:37:09.217Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "meshoptimizer.h",
-              "DocumentMoniker": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\meshoptimizer\\src\\meshoptimizer.h",
-              "RelativeDocumentMoniker": "meshoptimizer\\src\\meshoptimizer.h",
-              "ToolTip": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\meshoptimizer\\src\\meshoptimizer.h",
-              "RelativeToolTip": "meshoptimizer\\src\\meshoptimizer.h",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAAABgAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-01T20:23:23.247Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Source.h",
-              "DocumentMoniker": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\Source.h",
-              "RelativeDocumentMoniker": "Source.h",
-              "ToolTip": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\Source.h",
-              "RelativeToolTip": "Source.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAkAAABxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-22T15:12:19.188Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 6,
@@ -123,15 +84,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "simplifier.cpp",
               "DocumentMoniker": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\meshoptimizer\\src\\simplifier.cpp",
               "RelativeDocumentMoniker": "meshoptimizer\\src\\simplifier.cpp",
               "ToolTip": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\meshoptimizer\\src\\simplifier.cpp",
               "RelativeToolTip": "meshoptimizer\\src\\simplifier.cpp",
-              "ViewState": "AgIAADsIAAAAAAAAAAAWwEsIAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADEGAAAAAAAAAAASwEAGAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-02T22:47:44.093Z"
+              "WhenOpened": "2025-05-02T22:47:44.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "meshoptimizer.h",
+              "DocumentMoniker": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\meshoptimizer\\src\\meshoptimizer.h",
+              "RelativeDocumentMoniker": "meshoptimizer\\src\\meshoptimizer.h",
+              "ToolTip": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\meshoptimizer\\src\\meshoptimizer.h",
+              "RelativeToolTip": "meshoptimizer\\src\\meshoptimizer.h",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAABgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-01T20:23:23.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "vector",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
+              "ViewState": "AgIAAFAHAAAAAAAAAAASwF8HAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-05T03:37:09.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Source.h",
+              "DocumentMoniker": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\Source.h",
+              "RelativeDocumentMoniker": "Source.h",
+              "ToolTip": "C:\\Users\\hoss1\\source\\repos\\CS459_FinalProject_LOD2\\FinalProject_LOD\\Source.h",
+              "RelativeToolTip": "Source.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAkAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-22T15:12:19.188Z"
             }
           ]
         }

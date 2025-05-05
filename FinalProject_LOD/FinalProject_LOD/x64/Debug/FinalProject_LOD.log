@@ -9,5 +9,5 @@ C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\Source.h(73
   (compiling source file 'Source.cpp')
   
   FinalProject_LOD.vcxproj -> C:\Users\hoss1\Source\Repos\CS459_FinalProject_LOD2\FinalProject_LOD\x64\Debug\FinalProject_LOD.exe
-C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\Source.cpp(191): warning C6011: Dereferencing NULL pointer 'simplifiedIndexBuffer'. 
-C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\Source.cpp(193): warning C6011: Dereferencing NULL pointer 'modifiedVertices'. 
+C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\Source.cpp(190): warning C6011: Dereferencing NULL pointer 'simplifiedIndexBuffer'. 
+C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\Source.cpp(192): warning C6011: Dereferencing NULL pointer 'modifiedVertices'. 

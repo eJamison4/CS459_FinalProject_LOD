@@ -2,14 +2,14 @@
     <SFA>
       <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
       <FILENAME>Source.cpp</FILENAME>
-      <LINE>191</LINE>
+      <LINE>190</LINE>
       <COLUMN>6</COLUMN>
     </SFA>
     <DEFECTCODE>6011</DEFECTCODE>
     <DESCRIPTION>Dereferencing NULL pointer 'simplifiedIndexBuffer'. </DESCRIPTION>
     <FUNCTION>drawSimplified</FUNCTION>
     <DECORATED>?drawSimplified@@YAXXZ</DECORATED>
-    <FUNCLINE>171</FUNCLINE>
+    <FUNCLINE>170</FUNCLINE>
     <PROBABILITY>1</PROBABILITY>
     <RANK>4</RANK>
     <CATEGORY>
@@ -19,19 +19,19 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>172</LINE>
+        <LINE>171</LINE>
         <COLUMN>22</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>177</LINE>
+        <LINE>176</LINE>
         <COLUMN>27</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>178</LINE>
+        <LINE>177</LINE>
         <COLUMN>24</COLUMN>
         <KEYEVENT>
           <ID>1</ID>
@@ -43,7 +43,7 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>179</LINE>
+        <LINE>178</LINE>
         <COLUMN>11</COLUMN>
         <KEYEVENT>
           <ID>2</ID>
@@ -55,13 +55,13 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>180</LINE>
+        <LINE>179</LINE>
         <COLUMN>19</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>183</LINE>
+        <LINE>182</LINE>
         <COLUMN>22</COLUMN>
         <KEYEVENT>
           <ID>3</ID>
@@ -73,19 +73,19 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>189</LINE>
+        <LINE>188</LINE>
         <COLUMN>8</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>190</LINE>
+        <LINE>189</LINE>
         <COLUMN>10</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>190</LINE>
+        <LINE>189</LINE>
         <COLUMN>19</COLUMN>
         <KEYEVENT>
           <ID>4</ID>
@@ -97,7 +97,7 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>191</LINE>
+        <LINE>190</LINE>
         <COLUMN>6</COLUMN>
         <KEYEVENT>
           <ID>5</ID>
@@ -111,14 +111,14 @@
     <SFA>
       <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
       <FILENAME>Source.cpp</FILENAME>
-      <LINE>193</LINE>
+      <LINE>192</LINE>
       <COLUMN>12</COLUMN>
     </SFA>
     <DEFECTCODE>6011</DEFECTCODE>
     <DESCRIPTION>Dereferencing NULL pointer 'modifiedVertices'. </DESCRIPTION>
     <FUNCTION>drawSimplified</FUNCTION>
     <DECORATED>?drawSimplified@@YAXXZ</DECORATED>
-    <FUNCLINE>171</FUNCLINE>
+    <FUNCLINE>170</FUNCLINE>
     <PROBABILITY>1</PROBABILITY>
     <RANK>4</RANK>
     <CATEGORY>
@@ -128,13 +128,13 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>172</LINE>
+        <LINE>171</LINE>
         <COLUMN>22</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>173</LINE>
+        <LINE>172</LINE>
         <COLUMN>19</COLUMN>
         <KEYEVENT>
           <ID>1</ID>
@@ -146,7 +146,7 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>174</LINE>
+        <LINE>173</LINE>
         <COLUMN>11</COLUMN>
         <KEYEVENT>
           <ID>2</ID>
@@ -158,13 +158,13 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>175</LINE>
+        <LINE>174</LINE>
         <COLUMN>20</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>177</LINE>
+        <LINE>176</LINE>
         <COLUMN>27</COLUMN>
         <KEYEVENT>
           <ID>3</ID>
@@ -176,7 +176,7 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>183</LINE>
+        <LINE>182</LINE>
         <COLUMN>22</COLUMN>
         <KEYEVENT>
           <ID>4</ID>
@@ -188,19 +188,19 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>189</LINE>
+        <LINE>188</LINE>
         <COLUMN>8</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>190</LINE>
+        <LINE>189</LINE>
         <COLUMN>10</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>190</LINE>
+        <LINE>189</LINE>
         <COLUMN>19</COLUMN>
         <KEYEVENT>
           <ID>5</ID>
@@ -212,19 +212,19 @@
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>191</LINE>
+        <LINE>190</LINE>
         <COLUMN>6</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>192</LINE>
+        <LINE>191</LINE>
         <COLUMN>11</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\</FILEPATH>
         <FILENAME>Source.cpp</FILENAME>
-        <LINE>193</LINE>
+        <LINE>192</LINE>
         <COLUMN>12</COLUMN>
         <KEYEVENT>
           <ID>6</ID>

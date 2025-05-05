@@ -19,8 +19,6 @@ const int numOffFiles = sizeof(offFiles) / sizeof(offFiles[0]);
 int main(int argc, char* argv[]) {
 	glutInit(&argc, argv);
 
-	if (argc < 2) raise("Missing filepath argument...");
-
 	glutInitWindowPosition(WINDOWPOS_X, WINDOWPOS_Y);
 	glutInitWindowSize(WINDOWSIZE_X, WINDOWSIZE_Y);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
@@ -79,6 +77,7 @@ void onExitFree() {
 }
 
 bool init(const char filePath[]) {
+	lod_mode = NONE;
 	loadMeshFile_triangular(filePath);
 	computePerlinVertexColors();
 	return true;
