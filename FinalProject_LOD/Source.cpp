@@ -1,10 +1,23 @@
-#include "Source.h"
+﻿#include "Source.h"
 
+void createMenu();
+void loadOFFByIndex(int index);
+void computePerlinVertexColors();
 
+enum InteractionMode { MODE_NONE, MODE_ROTATE, MODE_ZOOM };
+InteractionMode currentMode = MODE_ROTATE;  // default to rotate
+
+const char* offFiles[] = {
+	"de_aztec.off",
+	"de_dust2.off",
+	"de_office.off"
+};
+
+std::vector<point> vertexColors;
+
+const int numOffFiles = sizeof(offFiles) / sizeof(offFiles[0]);
 int main(int argc, char* argv[]) {
 	glutInit(&argc, argv);
-
-	if (argc < 2) raise("Missing filepath argument...");
 
 	glutInitWindowPosition(WINDOWPOS_X, WINDOWPOS_Y);
 	glutInitWindowSize(WINDOWSIZE_X, WINDOWSIZE_Y);
@@ -13,19 +26,45 @@ int main(int argc, char* argv[]) {
 	win = glutCreateWindow("LOD Algorithms Demo");
 	OpenGLInit();
 
+	createMenu();
+
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
 	glutMouseFunc(mouse);
 	glutMotionFunc(mouseMotion);
 	glutReshapeFunc(resize);
 
-	if (!init(argv[1])) return 1;
+	init(offFiles[0]);
 
 	glutMainLoop();
 
 	onExitFree();
 
 	return 0;
+}
+
+void createMenu() {
+	int menu = glutCreateMenu([](int index) {
+		loadOFFByIndex(index);
+		});
+
+	for (int i = 0; i < numOffFiles; ++i) {
+		glutAddMenuEntry(offFiles[i], i);
+	}
+
+	glutAttachMenu(GLUT_RIGHT_BUTTON);
+}
+void loadOFFByIndex(int index) {
+	if (index >= 0 && index < numOffFiles) {
+		onExitFree(); // clean up existing model data
+
+		tz = 0.0f;    // Reset zoom
+		xrot = 0.0f;  // Reset rotation
+		yrot = 0.0f;
+
+		init(offFiles[index]);  // Load new model
+		glutPostRedisplay();    // Redraw scene
+	}
 }
 
 void onExitFree() {
@@ -38,25 +77,21 @@ void onExitFree() {
 }
 
 bool init(const char filePath[]) {
+	lod_mode = NONE;
 	loadMeshFile_triangular(filePath);
+	computePerlinVertexColors();
 	return true;
 }
+
 
 void display() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
-	
+
 	if (decoupleCamDepth)
-		gluLookAt(
-			0.0f, 0.0f, lockedDepth + 3.0f,
-			0.0f, 0.9f, 0.0f,
-			0.0f, 3.0f, 0.0f
-		);
-	else gluLookAt(
-		0.0f, 0.0f, tz + 3.0f,
-		0.0f, 0.2f, 0.0f,
-		0.0f, 3.0f, 0.0f
-	);
+		gluLookAt(0.0f, 0.0f, lockedDepth + 3.0f, 0.0f, 0.9f, 0.0f, 0.0f, 3.0f, 0.0f);
+	else
+		gluLookAt(0.0f, 0.0f, tz + 3.0f, 0.0f, 0.2f, 0.0f, 0.0f, 3.0f, 0.0f);
 
 	glRotatef(xrot, 1.0f, 0.0f, 0.0f);
 	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
@@ -80,19 +115,40 @@ void drawLighting() {
 	glPopMatrix();
 }
 
+void computePerlinVertexColors() {
+	vertexColors.clear();
+	vertexColors.resize(numVertices);
+
+	float frequency = 1000.0f; // Controls Perlin scale
+
+	for (int i = 0; i < numVertices; ++i) {
+		point v = vertices[i];
+		float noise = stb_perlin_noise3(v.x * frequency, v.y * frequency, v.z * frequency, 0, 0, 0);
+		float intensity = 0.5f * noise + 0.5f; // Normalize to [0, 1]
+
+		vertexColors[i].x = intensity;        // R
+		vertexColors[i].y = intensity * 0.85f; // G
+		vertexColors[i].z = intensity * 0.65f; // B
+	}
+}
+
+
 void drawMesh() {
+	glDisable(GL_LIGHTING); // Use color only
 	glBegin(GL_TRIANGLES);
 	if (lod_mode == 1)
 		drawSimplified();
 	else {
-		unsigned int index;
 		for (unsigned int i = 0; i < indexCount; i++) {
-			index = vertexIndexBuffer[i];
+			unsigned int index = vertexIndexBuffer[i];
+			glColor3f(vertexColors[index].x, vertexColors[index].y, vertexColors[index].z);
 			glVertex3f(vertices[index].x, vertices[index].y, vertices[index].z);
 		}
 	}
 	glEnd();
 }
+
+
 
 void handleMeshSimplify(){
 	float threshold = 0.2f;
@@ -113,7 +169,7 @@ void handleMeshSimplify(){
 
 void drawSimplified() {
 	if (modifiedVertices == NULL) {
-		modifiedVertices = (point*)malloc(numVertices * (3 * sizeof(float)));
+		modifiedVertices = (point*)malloc(numVertices * sizeof(point));
 		std::copy(&vertices[0], &vertices[numVertices], modifiedVertices);
 		numModdedVertices = numVertices;
 	}
@@ -122,52 +178,59 @@ void drawSimplified() {
 		std::copy(&vertexIndexBuffer[0], &vertexIndexBuffer[indexCount], simplifiedIndexBuffer);
 		numSimpleIndices = indexCount;
 	}
-	// if (!sampleDebounce && (int(floor(tz / 4)) != lastSampleDepthRatio)) {
+
 	if (manual_lod_depth != lastSampleDepthRatio) {
 		sampleDebounce = NUMDRAWSUNTILNEXTSAMPLE;
-		// lastSampleDepthRatio = int(floor(tz / 4));
 		lastSampleDepthRatio = manual_lod_depth;
 		handleMeshSimplify();
 	}
-	// sampleDebounce--;
-	point v;
-	if (modifiedVertices)
-		for (int i = 0; i < numSimpleIndices; i++) {
-			v = modifiedVertices[simplifiedIndexBuffer[i]];
-			glVertex3f(v.x, v.y, v.z);
-		}
+
+	glBegin(GL_TRIANGLES);
+	for (int i = 0; i < numSimpleIndices; i++) {
+		int idx = simplifiedIndexBuffer[i];
+		glColor3f(vertexColors[idx].x, vertexColors[idx].y, vertexColors[idx].z);
+		glVertex3f(modifiedVertices[idx].x, modifiedVertices[idx].y, modifiedVertices[idx].z);
+	}
+	glEnd();
 }
 
 
 void mouse(int button, int state, int x, int y) {
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-		mouseDepthMode = false;
-		mouseDown = true;
-		xdiff = x - yrot;
-		ydiff = -y + xrot;
-	}
-	else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) {
-		zdiff = -y + tz;
-		mouseDepthMode = true;
-		mouseDown = true;
-	}
-	else mouseDown = false;
-}
-
-void mouseMotion(int x, int y) {
-	if (mouseDown) {
-		if (mouseDepthMode) {
-			tz += (ZFACT * (y - mousey));
-			std::cout << "Depth: " << tz << "\n";
-		}
-		else {
-			xrot += (ANGFACT * (y - mousey));
-			yrot += (ANGFACT * (x - mousex));
-		}
+	if (state == GLUT_DOWN) {
 		mousex = x;
 		mousey = y;
-		glutPostRedisplay();
+		mouseDown = true;
 	}
+	else {
+		mouseDown = false;
+	}
+}
+
+
+void mouseMotion(int x, int y) {
+	if (!mouseDown) return;
+
+	int dx = x - mousex;
+	int dy = y - mousey;
+
+	switch (currentMode) {
+	case MODE_ZOOM:
+		tz += (ZFACT * dy);
+		std::cout << "Zoom: " << tz << "\n";
+		break;
+
+	case MODE_ROTATE:
+		xrot += (ANGFACT * dy);
+		yrot += (ANGFACT * dx);
+		break;
+
+	default:
+		break;
+	}
+
+	mousex = x;
+	mousey = y;
+	glutPostRedisplay();
 }
 
 void keyboard(unsigned char key, int x, int y) {
@@ -178,14 +241,20 @@ void keyboard(unsigned char key, int x, int y) {
 	case '2':
 		lod_mode = DOWNSAMPLE;
 		break;
-	case 'f':
-	case 'F':
+	case 'f': case 'F':
 		decoupleCamDepth = true;
 		lockedDepth = tz;
 		break;
-	case 't':
-	case 'T':
+	case 't': case 'T':
 		decoupleCamDepth = false;
+		break;
+	case 'z': case 'Z':
+		currentMode = MODE_ZOOM;
+		std::cout << "Mode: Zoom\n";
+		break;
+	case 'r': case 'R':
+		currentMode = MODE_ROTATE;
+		std::cout << "Mode: Rotate\n";
 		break;
 	case ',':
 		manual_lod_depth--;
@@ -195,7 +264,7 @@ void keyboard(unsigned char key, int x, int y) {
 		manual_lod_depth++;
 		std::cout << "decrease detail\n";
 		break;
-	case 27: // escape key
+	case 27: // ESC
 		exit(1);
 	}
 }
@@ -242,32 +311,55 @@ void loadMeshFile_triangular(const char filePath[]) {
 	std::ifstream infile(filePath);
 	std::string line;
 	std::getline(infile, line);
-	if ((line > "OFF") != 0) throw("Opened file is not an .OFF file...\n");
+	if (line != "OFF") throw("Opened file is not an .OFF file...\n");
+
 	meshopt_setAllocator(malloc, free);
+
 	int _zero; // not used
 	infile >> numOrigVertices >> numFaces >> _zero;
 
-	originalVertices = (point*)malloc(numOrigVertices * (3 * sizeof(float)));
+	originalVertices = (point*)malloc(numOrigVertices * sizeof(point));
 	if (!originalVertices) throw("Failed mem alloc for vertices...\n");
 
 	float ix, iy, iz;
+	float minX = FLT_MAX, minY = FLT_MAX, minZ = FLT_MAX;
+	float maxX = -FLT_MAX, maxY = -FLT_MAX, maxZ = -FLT_MAX;
+	float sumX = 0.0f, sumY = 0.0f, sumZ = 0.0f;
+
 	for (int i = 0; i < numOrigVertices; i++) {
 		infile >> ix >> iy >> iz;
-		maxVertex = std::max(maxVertex, std::max(ix, std::max(iy, iz)));
-		minVertex = std::min(minVertex, std::min(ix, std::min(iy, iz)));
+
+		sumX += ix; sumY += iy; sumZ += iz;
+
+		minX = std::min(minX, ix);
+		minY = std::min(minY, iy);
+		minZ = std::min(minZ, iz);
+
+		maxX = std::max(maxX, ix);
+		maxY = std::max(maxY, iy);
+		maxZ = std::max(maxZ, iz);
+
 		originalVertices[i].x = ix;
 		originalVertices[i].y = iy;
 		originalVertices[i].z = iz;
 	}
-	numVertices = numOrigVertices;
-	float range = maxVertex - minVertex;
-	for (int i = 0; i < numOrigVertices; i++) { // normalizing all points to btwn -1 and 1
-		originalVertices[i].x = 2 * ((originalVertices[i].x - minVertex) / range) - 1;
-		originalVertices[i].y = 2 * ((originalVertices[i].y - minVertex) / range) - 1;
-		originalVertices[i].z = 2 * ((originalVertices[i].z - minVertex) / range) - 1;
+
+	float centerX = sumX / numOrigVertices;
+	float centerY = sumY / numOrigVertices;
+	float centerZ = sumZ / numOrigVertices;
+
+	float rangeX = maxX - minX;
+	float rangeY = maxY - minY;
+	float rangeZ = maxZ - minZ;
+	float maxRange = std::max(rangeX, std::max(rangeY, rangeZ));
+
+	for (int i = 0; i < numOrigVertices; i++) {
+		originalVertices[i].x = 2.0f * (originalVertices[i].x - centerX) / maxRange;
+		originalVertices[i].y = 2.0f * (originalVertices[i].y - centerY) / maxRange;
+		originalVertices[i].z = 2.0f * (originalVertices[i].z - centerZ) / maxRange;
 	}
 
-	originalIndices = (unsigned int*)malloc((3 * numFaces) * sizeof(UINT64));
+	originalIndices = (unsigned int*)malloc((3 * numFaces) * sizeof(unsigned int));
 	if (!originalIndices) throw("Not enough memory available to allocate face indices...\n");
 
 	unsigned int _three, a, b, c;
@@ -281,7 +373,6 @@ void loadMeshFile_triangular(const char filePath[]) {
 	}
 	infile.close();
 	numIndices = buffIndex;
-	//origIndMap.reserve(origIndMap.size() + (numIndices / sizeof(int)));
-	//std::copy(&originalIndices[0], &originalIndices[numIndices], std::back_inserter(origIndMap));
-	indexMesh();
+
+	indexMesh(); // generate optimized buffers
 }

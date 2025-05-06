@@ -7,6 +7,11 @@
 #include <fstream>
 #include <vector>
 #include <meshoptimizer.h>
+//Make sure to add "\FinalProject_LOD\meshoptimizer\src" into additional include directories under properties:c++
+
+#define STB_PERLIN_IMPLEMENTATION
+#include "stb_perlin.h"
+
 
 
 struct point {

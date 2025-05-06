@@ -128,7 +128,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\macht\Documents\CS459\CS459_FinalProject_LOD\FinalProject_LOD\meshoptimizer\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\macht\Documents\CS459\CS459_FinalProject_LOD\FinalProject_LOD\meshoptimizer\src;C:\Users\hoss1\source\repos\CS459_FinalProject_LOD2\FinalProject_LOD\meshoptimizer\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableVectorLength>NotSet</EnableVectorLength>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
